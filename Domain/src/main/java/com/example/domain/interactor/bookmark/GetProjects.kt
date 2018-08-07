@@ -1,6 +1,7 @@
-package com.example.domain.interactor
+package com.example.domain.interactor.bookmark
 
 import com.example.domain.executor.PostExecutionThread
+import com.example.domain.interactor.ObservableUseCase
 import com.example.domain.model.Project
 import com.example.domain.repository.ProjectsRepository
 import io.reactivex.Observable
