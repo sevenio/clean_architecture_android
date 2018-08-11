@@ -1,7 +1,7 @@
-package com.example.domain.interactor
+package com.example.domain.interactor.bookmark
 
 import com.example.domain.executor.PostExecutionThread
-import com.example.domain.interactor.browse.GetProjects
+import com.example.domain.interactor.browse.GetBookmarkedProjects
 import com.example.domain.model.Project
 import com.example.domain.repository.ProjectsRepository
 import com.example.domain.test.ProjectDataFactory
@@ -12,28 +12,27 @@ import org.junit.Test
 import org.mockito.Mock
 import org.mockito.MockitoAnnotations
 
-// inorder to resolve error "class not fount empty test suite", go to terminal and type ./gradlew :domain:test
 class GetProjectsTest {
     @Mock
     lateinit var projectsRepository: ProjectsRepository
     @Mock
     lateinit var postExecutionThread: PostExecutionThread
-    private lateinit var getProjects: GetProjects
+    private lateinit var getBookmarkedProjects: GetBookmarkedProjects
 
     @Before
     fun setup() {
         MockitoAnnotations.initMocks(this)
-        getProjects = GetProjects(projectsRepository, postExecutionThread)
+        getBookmarkedProjects = GetBookmarkedProjects(projectsRepository, postExecutionThread)
     }
 
     private fun getStubProjects(observable: Observable<List<Project>>) {
-        whenever(projectsRepository.getProjects()).thenReturn(observable)
+        whenever(projectsRepository.getBookmarkedProjects()).thenReturn(observable)
     }
 
     @Test
     fun getProjectsCompletes() {
         getStubProjects(Observable.just(ProjectDataFactory.makeProjectList(2)))
-        val testObserver = getProjects.buildUseCaseObservable().test()
+        val testObserver = getBookmarkedProjects.buildUseCaseObservable().test()
         testObserver.assertComplete()
     }
 
@@ -41,7 +40,7 @@ class GetProjectsTest {
     fun getProjectsReturnsData() {
         val projects = ProjectDataFactory.makeProjectList(2)
         getStubProjects(Observable.just(projects))
-        val testObserver = getProjects.buildUseCaseObservable().test()
+        val testObserver = getBookmarkedProjects.buildUseCaseObservable().test()
         testObserver.assertValue(projects)
     }
 }
