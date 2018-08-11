@@ -12,7 +12,7 @@ import org.junit.Test
 import org.mockito.Mock
 import org.mockito.MockitoAnnotations
 
-class GetProjectsTest {
+class GetBookmarkedProjectsTest {
     @Mock
     lateinit var projectsRepository: ProjectsRepository
     @Mock
@@ -30,14 +30,14 @@ class GetProjectsTest {
     }
 
     @Test
-    fun getProjectsCompletes() {
+    fun getBookmarkedProjectsCompletes() {
         getStubProjects(Observable.just(ProjectDataFactory.makeProjectList(2)))
         val testObserver = getBookmarkedProjects.buildUseCaseObservable().test()
         testObserver.assertComplete()
     }
 
     @Test
-    fun getProjectsReturnsData() {
+    fun getBookmarkedProjectsReturnsData() {
         val projects = ProjectDataFactory.makeProjectList(2)
         getStubProjects(Observable.just(projects))
         val testObserver = getBookmarkedProjects.buildUseCaseObservable().test()

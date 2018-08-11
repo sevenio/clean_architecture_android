@@ -7,7 +7,7 @@ import io.reactivex.Completable
 import javax.inject.Inject
 
 class UnBookmarkProject @Inject constructor(private val projectsRepository: ProjectsRepository, postExecutionThread: PostExecutionThread) : CompletableUseCase<UnBookmarkProject.Params>(postExecutionThread) {
-    override fun buildUseCaseCompletable(params: Params?): Completable {
+    public override fun buildUseCaseCompletable(params: Params?): Completable {
         if (params == null) throw IllegalArgumentException("Argument cannot be null")
         return projectsRepository.unbookmarkProject(params.projectId)
     }
