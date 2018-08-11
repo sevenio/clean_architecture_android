@@ -1,4 +1,4 @@
-package com.example.domain.interactor.bookmark
+package com.example.domain.interactor.browse
 
 import com.example.domain.executor.PostExecutionThread
 import com.example.domain.interactor.browse.GetBookmarkedProjects
