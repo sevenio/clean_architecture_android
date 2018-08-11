@@ -1,4 +1,5 @@
 apply plugin: 'kotlin'
+
 dependencies {
     def domainDependencies = rootProject.ext.domainDependencies
     def domainTestDependencies = rootProject.ext.domainTestDependencies
