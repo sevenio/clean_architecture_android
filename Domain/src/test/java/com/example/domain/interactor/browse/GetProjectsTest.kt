@@ -43,5 +43,5 @@ class GetProjectsTest {
         getStubProjects(Observable.just(projects))
         val testObserver = getProjects.buildUseCaseObservable().test()
         testObserver.assertValue(projects)
-    }
+                   }
 }

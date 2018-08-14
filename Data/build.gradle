@@ -13,8 +13,15 @@ dependencies {
 
     testImplementation dataTestDependencies.junit
     testImplementation dataTestDependencies.kotlinJUnit
-    testImplementation dataTestDependencies.mockito
-    testImplementation dataTestDependencies.assertj}
+
+    testImplementation 'org.mockito:mockito-inline:2.8.9'
+
+    testImplementation(dataTestDependencies.mockito) {
+        exclude group: 'org.jetbrains.kotlin'
+        exclude group: 'org.mockito'
+    }
+    testImplementation dataTestDependencies.assertj
+}
 
 sourceCompatibility = "1.6"
 targetCompatibility = "1.6"
