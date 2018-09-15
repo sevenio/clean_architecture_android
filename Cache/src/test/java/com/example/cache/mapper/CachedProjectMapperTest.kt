@@ -3,7 +3,7 @@ package com.example.cache.mapper
 import com.example.cache.model.CachedProject
 import com.example.cache.test.factory.ProjectDataFactory
 import com.example.data.model.ProjectEntity
-import junit.framework.Assert.assertEquals
+import junit.framework.TestCase.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4

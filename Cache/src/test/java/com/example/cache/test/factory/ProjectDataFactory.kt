@@ -15,6 +15,17 @@ object ProjectDataFactory {
                 DataFactory.randomUuid(),
                 DataFactory.randomBoolean())
     }
+
+    fun makeBookmarkedCacheProject():CachedProject{
+        return CachedProject(DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                true)
+    }
     fun makeProjectEntity(): ProjectEntity {
         return ProjectEntity(DataFactory.randomUuid(),
                 DataFactory.randomUuid(),
