@@ -23,4 +23,9 @@ abstract class ObservableUseCase<T, in Params> constructor(private val postExecu
         disposables.add(disposable)
     }
 
+    fun dispose() {
+        if (!disposables.isDisposed) disposables.dispose()
+    }
+
+
 }

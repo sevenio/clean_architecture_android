@@ -26,4 +26,8 @@ abstract class CompletableUseCase<in Params> constructor(private val postExecuti
         disposables.add(disposable)
     }
 
+    fun dispose() {
+        if (!disposables.isDisposed) disposables.dispose()
+    }
+
 }

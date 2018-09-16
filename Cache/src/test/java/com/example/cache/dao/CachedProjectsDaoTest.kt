@@ -48,10 +48,10 @@ class CachedProjectsDaoTest {
 
     @Test
     fun getBookmarkProjectsReturnsData() {
-        val project = ProjectDataFactory.makeCachedProject()
+        val nonBookmarkedProject = ProjectDataFactory.makeNonBookmarkedCacheProject()
         val bookmarkedProject = ProjectDataFactory.makeBookmarkedCacheProject()
 
-        database.cachedProjectsDao().insertProjects(listOf(project, bookmarkedProject))
+        database.cachedProjectsDao().insertProjects(listOf(nonBookmarkedProject, bookmarkedProject))
         val testObserver = database.cachedProjectsDao().getBookmarkedProjects().test()
         testObserver.assertValue(listOf(bookmarkedProject))
     }
