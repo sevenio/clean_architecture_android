@@ -16,7 +16,7 @@ object ProjectDataFactory {
                 DataFactory.randomBoolean())
     }
 
-    fun makeBookmarkedCacheProject():CachedProject{
+    fun makeBookmarkedCacheProject(): CachedProject {
         return CachedProject(DataFactory.randomUuid(),
                 DataFactory.randomUuid(),
                 DataFactory.randomUuid(),
@@ -26,6 +26,19 @@ object ProjectDataFactory {
                 DataFactory.randomUuid(),
                 true)
     }
+
+    fun makeNonBookmarkedCacheProject(): CachedProject {
+        return CachedProject(DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                false)
+    }
+
+
     fun makeProjectEntity(): ProjectEntity {
         return ProjectEntity(DataFactory.randomUuid(),
                 DataFactory.randomUuid(),
@@ -35,5 +48,27 @@ object ProjectDataFactory {
                 DataFactory.randomUuid(),
                 DataFactory.randomUuid(),
                 DataFactory.randomBoolean())
+    }
+
+    fun makeBookmarkedProjectEntity(): ProjectEntity {
+        return ProjectEntity(DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                true)
+    }
+
+    fun makeNonBookmarkedProjectEntity(): ProjectEntity {
+        return ProjectEntity(DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                DataFactory.randomUuid(),
+                false)
     }
 }

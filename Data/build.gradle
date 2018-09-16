@@ -14,12 +14,8 @@ dependencies {
     testImplementation dataTestDependencies.junit
     testImplementation dataTestDependencies.kotlinJUnit
 
-    testImplementation 'org.mockito:mockito-inline:2.8.9'
 
-    testImplementation(dataTestDependencies.mockito) {
-        exclude group: 'org.jetbrains.kotlin'
-        exclude group: 'org.mockito'
-    }
+    testImplementation dataTestDependencies.mockito
     testImplementation dataTestDependencies.assertj
 }
 
