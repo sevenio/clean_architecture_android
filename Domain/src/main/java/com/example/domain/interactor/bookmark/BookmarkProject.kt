@@ -6,7 +6,7 @@ import com.example.domain.repository.ProjectsRepository
 import io.reactivex.Completable
 import javax.inject.Inject
 
-class BookmarkProject @Inject constructor(private val projectsRepository: ProjectsRepository, postExecutionThread: PostExecutionThread) : CompletableUseCase<BookmarkProject.Params>(postExecutionThread) {
+open class BookmarkProject @Inject constructor(private val projectsRepository: ProjectsRepository, postExecutionThread: PostExecutionThread) : CompletableUseCase<BookmarkProject.Params>(postExecutionThread) {
 
     public override fun buildUseCaseCompletable(params: Params?): Completable {
         if (params == null) throw IllegalArgumentException("Argument cannot be null")
