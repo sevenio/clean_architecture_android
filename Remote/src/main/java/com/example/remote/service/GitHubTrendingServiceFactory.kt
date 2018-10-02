@@ -9,7 +9,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 class GitHubTrendingServiceFactory {
-    open fun makeGithubTrendingService(isDebug: Boolean): GithubTrendingService {
+
+    fun makeGithubTrendingService(isDebug: Boolean): GithubTrendingService {
         val okHttpClient = makeOkHttpClient(
                 makeLoggingInterceptor((isDebug)))
         return makeGithubTrendingService(okHttpClient, Gson())
