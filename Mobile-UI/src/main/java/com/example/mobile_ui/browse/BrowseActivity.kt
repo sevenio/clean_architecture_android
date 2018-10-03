@@ -1,10 +1,9 @@
-package com.example.mobile_ui
+package com.example.mobile_ui.browse
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import android.widget.LinearLayout
+import com.example.mobile_ui.R
 
 import kotlinx.android.synthetic.main.activity_main.*
 

@@ -1,7 +1,7 @@
 package com.example.mobile_ui.injection.module
 
 import com.example.domain.executor.PostExecutionThread
-import com.example.mobile_ui.BrowseActivity
+import com.example.mobile_ui.browse.BrowseActivity
 import com.example.mobile_ui.UIThread
 import dagger.Binds
 import dagger.Module
