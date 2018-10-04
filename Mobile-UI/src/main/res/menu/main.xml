@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/action_bookmarked"
+        android:icon="@drawable/ic_collections_bookmark_black_24dp"
+        android:title="Bookmarked Projects"
+        app:showAsAction="always" />
+</menu>

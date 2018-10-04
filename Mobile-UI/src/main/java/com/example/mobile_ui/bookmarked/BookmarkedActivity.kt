@@ -7,6 +7,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.view.MenuItem
 import android.view.View
 import com.example.mobile_ui.R
 import com.example.mobile_ui.injection.ViewModelFactory
@@ -44,6 +45,16 @@ class BookmarkedActivity : AppCompatActivity() {
                 .get(BrowseBookmarkedProjectsViewModel::class.java)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setupBrowseRecycler()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        return when (item?.itemId) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onStart() {

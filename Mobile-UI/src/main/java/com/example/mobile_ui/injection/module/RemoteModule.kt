@@ -19,6 +19,7 @@ abstract class RemoteModule {
             return GitHubTrendingServiceFactory.makeGithubTrendingService(BuildConfig.DEBUG)
         }
     }
+
     @Binds
-abstract fun bindProjectsRemote(projectsRemote: ProjectRemoteImpl): ProjectsRemote
+    abstract fun bindProjectsRemote(projectsRemote: ProjectRemoteImpl): ProjectsRemote
 }
